@@ -1,0 +1,74 @@
+:root {
+  --color-bg: #1a1a1a; /* Fundo principal */
+  --color-card: #262626; /* Fundo de cards/tarefas */
+  --color-text-primary: #ececec; /* Texto principal */
+  --color-text-secondary: #b3b3b3; /* Texto secundário/descritivo */
+  --color-border: #3d3d3d; /* Bordas e divisores */
+  --color-button: #333333; /* Fundo do botão */
+  --color-button-hover: #444444; /* Fundo do botão no hover */
+}
+
+body {
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-card {
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.todo-card label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.todo-card input,
+.todo-card textarea,
+.todo-card select {
+  width: 95%;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.todo-card select {
+  width: 101%;
+}
+
+.todo-card textarea {
+  height: 80px;
+  width: 95%;
+  resize: none;
+}
+
+.todo-card button {
+  background-color: var(--color-button);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 101%;
+}
+
+.todo-card button:hover {
+  background-color: var(--color-button-hover);
+  cursor: pointer;
+}
