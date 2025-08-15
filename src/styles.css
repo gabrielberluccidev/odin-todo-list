@@ -1,74 +1,242 @@
 :root {
-  --color-bg: #1a1a1a; /* Fundo principal */
-  --color-card: #262626; /* Fundo de cards/tarefas */
-  --color-text-primary: #ececec; /* Texto principal */
-  --color-text-secondary: #b3b3b3; /* Texto secundário/descritivo */
-  --color-border: #3d3d3d; /* Bordas e divisores */
-  --color-button: #333333; /* Fundo do botão */
-  --color-button-hover: #444444; /* Fundo do botão no hover */
+  /* ===== Base / Backgrounds ===== */
+  --bg: #0f1117;
+  --surface: #151922;
+  --surface-2: #1b2030;
+  --overlay: rgba(0, 0, 0, 0.5);
+
+  /* ===== Texto ===== */
+  --text: #e6e6e6;
+  --text-dim: #b3bac7;
+  --text-muted: #8a93a5;
+  --text-inverse: #0f1117;
+
+  /* ===== Paleta Ação/Marca ===== */
+  --accent: #0ea5a8;
+  --accent-hover: #0b8184;
+  --accent-ghost: rgba(14, 165, 168, 0.15);
+  --focus-ring: #22d3ee;
+
+  /* ===== Bordas / Divisores ===== */
+  --border: #2a2f3a;
+  --divider: #232833;
+  --border-contrast: #394256;
+
+  /* ===== Inputs / Checkbox / Campos ===== */
+  --input-bg: #111520;
+  --input-border: #2a2f3a;
+  --input-placeholder: #7f889a;
+  --input-check: #22d3ee;
+
+  /* ===== Estados ===== */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #60a5fa;
+  --disabled: #3a4150;
+
+  /* ===== Prioridades (tags) ===== */
+  --prio-low: #4caf50;
+  --prio-medium: #ffc107;
+  --prio-high: #f44336;
+  --tag-fg: #0f1117;
+  --tag-bg: rgba(255, 255, 255, 0.08);
+  --tag-border: rgba(255, 255, 255, 0.12);
+
+  /* ===== Cores das listas (sidebar) ===== */
+  --cat-personal: #0ea5a8;
+  --cat-work: #f59e0b;
+  --cat-shopping: #a855f7;
+  --cat-errands: #22c55e;
+
+  /* ===== Metadados (datas à direita) ===== */
+  --meta: #a2a9b8;
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 12px 28px rgba(0, 0, 0, 0.55);
+  --shadow-accent: 0 0 10px rgba(14, 165, 168, 0.5);
+  --shadow-success: 0 0 10px rgba(34, 197, 94, 0.45);
+  --shadow-warning: 0 0 10px rgba(245, 158, 11, 0.45);
+  --shadow-danger: 0 0 10px rgba(239, 68, 68, 0.45);
+
+  /* ===== Raios / Espaçamentos ===== */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --pad-sm: 8px;
+  --pad-md: 12px;
+  --pad-lg: 16px;
+
+  /* ===== Botões ===== */
+  --btn-bg: var(--accent);
+  --btn-bg-hover: var(--accent-hover);
+  --btn-fg: #e6f9fa;
+  --btn-border: transparent;
+  --btn-shadow: var(--shadow-md);
+
+  /* ===== Cartões / Painéis ===== */
+  --card-bg: var(--surface);
+  --card-border: var(--border);
+  --card-shadow: var(--shadow-lg);
+
+  /* ===== Hovers / Actives ===== */
+  --hover: rgba(255, 255, 255, 0.04);
+  --active: rgba(255, 255, 255, 0.08);
+
+  /* ===== Gradientes ===== */
+  --grad-accent: linear-gradient(90deg, #0ea5a8 0%, #22d3ee 100%);
+
+  /* ===== Tamanhos ===== */
+  --font-xs: 0.75rem; /* 12px */
+  --font-sm: 0.875rem; /* 14px */
+  --font-md: 1rem; /* 16px */
+  --font-lg: 1.125rem; /* 18px */
+  --font-xl: 1.25rem; /* 20px */
+  --font-xxl: 1.5rem; /* 24px */
+
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 32px;
+
+  --input-height-sm: 32px;
+  --input-height-md: 40px;
+  --input-height-lg: 48px;
+
+  --btn-height-sm: 32px;
+  --btn-height-md: 40px;
+  --btn-height-lg: 48px;
+
+  --container-max: 1200px;
+  --sidebar-width: 280px;
 }
 
-body {
-  background-color: var(--color-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* CSS reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
-.todo-card {
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 350px;
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.todo-card label {
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 4px;
 }
-
-.todo-card input,
-.todo-card textarea,
-.todo-card select {
-  width: 95%;
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 0.95rem;
-  margin-bottom: 14px;
+body {
+  line-height: 1;
 }
-
-.todo-card select {
-  width: 101%;
+ol,
+ul {
+  list-style: none;
 }
-
-.todo-card textarea {
-  height: 80px;
-  width: 95%;
-  resize: none;
+blockquote,
+q {
+  quotes: none;
 }
-
-.todo-card button {
-  background-color: var(--color-button);
-  color: var(--color-text-primary);
-  border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  width: 101%;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
-
-.todo-card button:hover {
-  background-color: var(--color-button-hover);
-  cursor: pointer;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
