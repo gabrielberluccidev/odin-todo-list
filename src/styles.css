@@ -320,18 +320,18 @@ span {
   margin-bottom: var(--pad-lg);
 }
 
-.todo-list-side-bar-add-new-task-form form {
+.todo-list-side-bar-add-new-task-form .form {
   display: flex;
   flex-direction: column;
 }
 
-.todo-list-side-bar-add-new-task-form form label {
+.todo-list-side-bar-add-new-task-form .form label {
   color: var(--text);
   margin-bottom: var(--pad-sm);
   margin-top: var(--pad-sm);
 }
 
-.todo-list-side-bar-add-new-task-form form input {
+.todo-list-side-bar-add-new-task-form .form input {
   padding: var(--pad-xs);
   color: var(--text);
   background-color: var(--input-bg);
@@ -339,7 +339,7 @@ span {
   border-radius: var(--pad-xs);
 }
 
-.todo-list-side-bar-add-new-task-form form select {
+.todo-list-side-bar-add-new-task-form .form select {
   padding: var(--pad-xs);
   color: var(--text);
   background-color: var(--input-bg);
@@ -347,7 +347,7 @@ span {
   border-radius: var(--pad-xs);
 }
 
-.todo-list-side-bar-add-new-task-form form button {
+.todo-list-side-bar-add-new-task-form .form button {
   background-color: var(--btn-bg);
   color: var(--text);
   padding: var(--pad-xs);
