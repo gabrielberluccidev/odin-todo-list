@@ -1,5 +1,7 @@
 import "./styles.css";
 
-import { getTaskInfo } from "./getTaskInfo.js";
+import { initTaskController } from "./tasks/taskController.js";
 
-getTaskInfo();
+document.addEventListener("DOMContentLoaded", () => {
+  initTaskController();
+});
