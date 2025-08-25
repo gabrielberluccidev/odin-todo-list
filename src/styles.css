@@ -431,3 +431,19 @@ span {
 ::-webkit-scrollbar-button {
   color: var(--text);
 }
+
+.todo-list-main-task-card > span.delete {
+  position: absolute;
+  left: 0%;
+  top: 100%; /* Posiciona abaixo da linha principal */
+  font-size: 0.8em;
+  font-size: var(--font-md);
+  font-weight: bold;
+  margin-left: 11px;
+  padding: var(--pad-sm);
+  border-radius: 4px;
+}
+
+.todo-list-main-task-card > span.delete:hover {
+  cursor: pointer;
+}
