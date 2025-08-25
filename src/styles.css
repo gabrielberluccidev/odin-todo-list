@@ -359,6 +359,9 @@ span {
 
 .todo-list-main-title {
   margin-left: var(--pad-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .todo-list-main-title h4 {
@@ -367,7 +370,10 @@ span {
 
 .todo-list-main-task {
   display: flex;
-  justify-content: space-around;
+  width: 410px;
+  flex-direction: column;
+  height: 480px;
+  overflow: auto;
 }
 
 .todo-list-main-task-card {
@@ -392,7 +398,7 @@ span {
 
 .todo-list-main-task-card > span {
   position: absolute;
-  right: 0;
+  right: 0%;
   top: 100%; /* Posiciona abaixo da linha principal */
   font-size: 0.8em;
   font-size: var(--font-md);
@@ -402,14 +408,26 @@ span {
   border-radius: 4px;
 }
 
-.todo-list-main-task-card > span.high {
+.todo-list-main-task-card > span.HIGH {
   background-color: var(--prio-high);
 }
 
-.todo-list-main-task-card > span.medium {
+.todo-list-main-task-card > span.MEDIUM {
   background-color: var(--prio-medium);
 }
 
-.todo-list-main-task-card > span.low {
+.todo-list-main-task-card > span.LOW {
   background-color: var(--prio-low);
+}
+
+#add-task-button:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--divider);
+}
+
+::-webkit-scrollbar-button {
+  color: var(--text);
 }
