@@ -76,13 +76,20 @@
           <div class="todo-list-side-bar-add-new-task-form">
             <div class="form">
               <label for="title">Title</label>
-              <input type="text" name="title" id="title" />
+              <input
+                minlength="1"
+                maxlength="20"
+                required
+                type="text"
+                name="title"
+                id="title"
+              />
 
               <label for="date">Due Date</label>
-              <input type="date" name="date" id="date" />
+              <input required type="date" name="date" id="date" />
 
               <label for="priority">Priority</label>
-              <select name="priority" id="priority">
+              <select required name="priority" id="priority">
                 <option id="low" value="low">Low</option>
                 <option id="medium" value="medium">Medium</option>
                 <option id="high" value="high">High</option>
@@ -99,35 +106,7 @@
           <h4>TASKS</h4>
         </div>
 
-        <div class="todo-list-main-task">
-          <div class="todo-list-main-task-card">
-            <div class="todo-list-main-task-card-title">
-              <input type="checkbox" id="marked" />
-              <p>Meditate</p>
-            </div>
-
-            <div class="todo-list-main-task-card-date">
-              <p>Sun, May 25</p>
-            </div>
-
-            <span class="high">High</span>
-          </div>
-        </div>
-
-        <div class="todo-list-main-task">
-          <div class="todo-list-main-task-card">
-            <div class="todo-list-main-task-card-title">
-              <input type="checkbox" id="marked" />
-              <p>Meditate</p>
-            </div>
-
-            <div class="todo-list-main-task-card-date">
-              <p>Sun, May 25</p>
-            </div>
-
-            <span class="high">High</span>
-          </div>
-        </div>
+        <div class="todo-list-main-task"></div>
       </div>
     </div>
   </body>
