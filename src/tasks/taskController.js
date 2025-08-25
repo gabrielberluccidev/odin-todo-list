@@ -1,6 +1,6 @@
 import { Task } from "./taskModel.js";
 import { getTaskFormInput, clearForm } from "./taskForm.js";
-import { createTodoCard } from "./taskUI.js";
+import { createTodoCard, deleteTodoCard } from "./taskUI.js";
 
 export function initTaskController() {
   const btn = document.querySelector("#add-task-button");
@@ -20,6 +20,13 @@ export function initTaskController() {
     const card = createTodoCard(task);
 
     container.appendChild(card);
+
     clearForm();
+  });
+
+  container.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete")) {
+      e.target.closest(".todo-list-main-task-card").remove();
+    }
   });
 }
