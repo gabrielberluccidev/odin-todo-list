@@ -36,6 +36,7 @@ export function createTodoCard(task) {
   const todoTitle = document.createElement("p");
   const todoDate = document.createElement("p");
   const todoPriority = document.createElement("span");
+  const deleteTask = document.createElement("span");
 
   /* this section will add classes to the divs */
   todoCard.classList.add("todo-list-main-task-card");
@@ -45,6 +46,8 @@ export function createTodoCard(task) {
   /* add classes and attributes to the elements */
   checkbox.setAttribute("type", "checkbox");
   checkbox.classList.add("checkbox");
+  deleteTask.classList.add("material-symbols-outlined");
+  deleteTask.classList.add("delete");
 
   const { todoTitleInput, todoDateInput, todoPriorityInput } =
     getTaskFormInput();
@@ -62,6 +65,7 @@ export function createTodoCard(task) {
   todoTitle.textContent = todoTitleInput;
   todoDate.textContent = todoDateInput;
   todoPriority.textContent = todoPriorityInput;
+  deleteTask.textContent = "delete";
 
   /* this section append the childs, following the DOM */
 
@@ -69,6 +73,7 @@ export function createTodoCard(task) {
   todoCard.appendChild(todoTitleCard);
   todoCard.appendChild(todoDateCard);
   todoCard.appendChild(todoPriority);
+  todoCard.appendChild(deleteTask);
 
   /* append the elements to the todoTitleCard */
   todoTitleCard.appendChild(checkbox);
