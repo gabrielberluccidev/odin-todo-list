@@ -1,0 +1,81 @@
+import { getTaskFormInput } from "./taskForm.js";
+
+export function createTodoCard(task) {
+  /* create the divs based on HMTL project which is based on the classes as bellow:
+
+  todo-list-main-task: immutable, insn't handled by the DOM;
+    (firstChild)todo-list-main-task-card: mutable, handled by the DOM;
+        (mainChild)todo-list-main-task-title: mutable, handled by the DOM;
+            (child)checkbox: mutable, is handled by the DOM;;
+            (child)<p>todoTitle</p>: mutable, handled by the DOM;
+        (mainChild)todo-list-main-task-card-date: mutable, handled by the DOM;
+            (chiled)<p>todoDate</p>: mutable, handled by the DOM;
+        (mainChild)<span>todoPriority</span>: mutable, hanled by the DOM;
+  todo-list-main-task: immutable, insn't handled by the DOM;    
+  */
+
+  /* the section bellow will handle the creation of all the elements that will be handled by the DOM */
+
+  /* those are the div elements:
+    todoCard = todo-list-main-task-card;
+    todoTitleCard = todo-list-main-task-title;
+    todoDateCard = todo-list-main-task-card-date;
+  */
+  const todoCard = document.createElement("div");
+  const todoTitleCard = document.createElement("div");
+  const todoDateCard = document.createElement("div");
+
+  /* this block is used to create the elements that will recive the infos
+    about the todo list 
+    checkbox: the checkbox to mark if the task is whether finshed or not;
+    todoTitle: it's the <p>todoTitle</p> element;
+    todoDate: it's the <p>todoDate</p> element;
+    todoPriority: it's the <span>taskPriority</span> element;
+    */
+  const checkbox = document.createElement("input");
+  const todoTitle = document.createElement("p");
+  const todoDate = document.createElement("p");
+  const todoPriority = document.createElement("span");
+
+  /* this section will add classes to the divs */
+  todoCard.classList.add("todo-list-main-task-card");
+  todoTitleCard.classList.add("todo-list-main-task-card-title");
+  todoDateCard.classList.add("todo-list-main-task-card-date");
+
+  /* add classes and attributes to the elements */
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.classList.add("checkbox");
+
+  const { todoTitleInput, todoDateInput, todoPriorityInput } =
+    getTaskFormInput();
+  todoPriority.classList.add(`${todoPriorityInput}`);
+
+  /* add datasets to the todoCard, may not be used */
+  todoCard.dataset.id = Date.now();
+  todoCard.dataset.title = todoTitleInput;
+  todoCard.dataset.date = todoDateInput;
+  todoCard.dataset.priority = todoPriorityInput;
+
+  // /* get the input's values from taskForm.js */
+
+  /* add the textContent to the elements */
+  todoTitle.textContent = todoTitleInput;
+  todoDate.textContent = todoDateInput;
+  todoPriority.textContent = todoPriorityInput;
+
+  /* this section append the childs, following the DOM */
+
+  /* append the divs and elements to the todoCard */
+  todoCard.appendChild(todoTitleCard);
+  todoCard.appendChild(todoDateCard);
+  todoCard.appendChild(todoPriority);
+
+  /* append the elements to the todoTitleCard */
+  todoTitleCard.appendChild(checkbox);
+  todoTitleCard.appendChild(todoTitle);
+
+  /* append the elements to the todoDateCard */
+  todoDateCard.appendChild(todoDate);
+
+  return todoCard;
+}
