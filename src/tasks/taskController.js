@@ -1,6 +1,6 @@
 import { Task } from "./taskModel.js";
 import { getTaskFormInput, clearForm } from "./taskForm.js";
-import { createTodoCard, deleteTodoCard } from "./taskUI.js";
+import { createTodoCard } from "./taskUI.js";
 
 export function initTaskController() {
   const btn = document.querySelector("#add-task-button");
