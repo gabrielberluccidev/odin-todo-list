@@ -1,6 +1,7 @@
 import { Task } from "./taskModel.js";
 import { getTaskFormInput, clearForm } from "./taskForm.js";
-import { createTodoCard } from "./taskUI.js";
+import { createTodoCard, closeModal, openEditModal } from "./taskUI.js";
+import { checkExpiredDate } from "./checkExpiredDate.js";
 
 export function initTaskController() {
   const btn = document.querySelector("#add-task-button");
@@ -22,9 +23,16 @@ export function initTaskController() {
     container.appendChild(card);
 
     clearForm();
+    closeModal();
+
+    setInterval(checkExpiredDate, 1000);
   });
 
   container.addEventListener("click", (e) => {
+    if (e.target.tagName === "P") {
+      const card = e.target.closest(".todo-list-main-task-card");
+      openEditModal(card);
+    }
     if (e.target.classList.contains("delete")) {
       e.target.closest(".todo-list-main-task-card").remove();
     }
