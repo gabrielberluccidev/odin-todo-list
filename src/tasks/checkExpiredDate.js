@@ -22,7 +22,6 @@ export function checkExpiredDate() {
     let expiredCard = card.querySelector(".expired");
 
     if (status === "past") {
-      // cria ou mostra o badge
       if (!expiredCard) {
         expiredCard = document.createElement("span");
         expiredCard.classList.add("expired");
@@ -31,7 +30,6 @@ export function checkExpiredDate() {
       }
       expiredCard.style.display = "inline";
     } else {
-      // esconde se não é passado
       if (expiredCard) {
         expiredCard.style.display = "none";
       }
