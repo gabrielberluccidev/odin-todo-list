@@ -106,5 +106,26 @@
         <div class="todo-list-main-task"></div>
       </div>
     </div>
+
+    <div id="edit-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <h2>Edit Task</h2>
+        <label for="edit-title">Title</label>
+        <input type="text" id="edit-title" />
+
+        <label for="edit-date">Date</label>
+        <input type="date" id="edit-date" />
+
+        <label for="edit-priority">Priority</label>
+        <select id="edit-priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button id="save-edit">Save</button>
+      </div>
+    </div>
   </body>
 </html>
