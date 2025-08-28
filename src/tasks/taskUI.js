@@ -1,4 +1,5 @@
 import { getTaskFormInput } from "./taskForm.js";
+import { checkExpiredDate } from "./checkExpiredDate.js";
 
 export function createTodoCard(task) {
   /* create the divs based on HMTL project which is based on the classes as bellow:
@@ -64,6 +65,8 @@ export function createTodoCard(task) {
   /* add the textContent to the elements */
   todoTitle.textContent = todoTitleInput;
   todoDate.textContent = todoDateInput;
+  console.log(todoDate);
+
   todoPriority.textContent = todoPriorityInput;
   deleteTask.textContent = "delete";
 
@@ -83,4 +86,61 @@ export function createTodoCard(task) {
   todoDateCard.appendChild(todoDate);
 
   return todoCard;
+}
+
+export function openEditModal(card) {
+  const modal = document.querySelector("#edit-modal");
+  const titleInput = document.querySelector("#edit-title");
+  const dateInput = document.querySelector("#edit-date");
+  const priorityInput = document.querySelector("#edit-priority");
+  const saveBtn = document.querySelector("#save-edit");
+
+  // TODO: add form validation
+
+  titleInput.value = card.dataset.title;
+  dateInput.value = card.dataset.date;
+  priorityInput.value = card.dataset.priority.toLowerCase();
+
+  modal.style.display = "block";
+
+  const onSave = () => {
+    const newTitle = titleInput.value.trim();
+    const newDate = dateInput.value.trim();
+    const newPriority = priorityInput.value.toUpperCase();
+
+    card.dataset.title = newTitle;
+    card.dataset.date = newDate;
+    card.dataset.priority = newPriority;
+
+    card.querySelector(".todo-list-main-task-card-title p").textContent =
+      newTitle;
+    card.querySelector(".todo-list-main-task-card-date p").textContent =
+      newDate;
+    card.querySelector("span").textContent = newPriority;
+    card.querySelector("span").className = newPriority;
+
+    modal.style.display = "none";
+
+    saveBtn.removeEventListener("click", onSave);
+  };
+
+  saveBtn.addEventListener("click", onSave);
+}
+
+export function closeModal() {
+  const modal = document.querySelector("#edit-modal");
+  const closeModalBtn = document.querySelector("#close-modal");
+
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // window.addEventListener("click", (e) => {
+  //   if (e.taget === modal) modal.style.display = "none";
+  // });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.style.display === "block")
+      modal.style.display = "none";
+  });
 }
