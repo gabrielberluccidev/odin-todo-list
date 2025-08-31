@@ -2,46 +2,25 @@
   /* ===== Base / Backgrounds ===== */
   --bg: #0f1117;
   --surface: #151922;
-  --surface-2: #1b2030;
-  --overlay: rgba(0, 0, 0, 0.5);
 
   /* ===== Texto ===== */
   --text: #e6e6e6;
-  --text-dim: #b3bac7;
-  --text-muted: #8a93a5;
-  --text-inverse: #0f1117;
 
-  /* ===== Paleta Ação/Marca ===== */
+  /* ===== Paleta Ação/Marca (usadas em botões) ===== */
   --accent: #0ea5a8;
-  --accent-hover: #0b8184;
-  --accent-ghost: rgba(14, 165, 168, 0.15);
-  --focus-ring: #22d3ee;
+  --accent-hover: #0b8184; /* Mantido por ser par de --accent */
 
   /* ===== Bordas / Divisores ===== */
-  --border: #2a2f3a;
   --divider: #232833;
-  --border-contrast: #394256;
 
-  /* ===== Inputs / Checkbox / Campos ===== */
+  /* ===== Inputs / Campos ===== */
   --input-bg: #111520;
   --input-border: #2a2f3a;
-  --input-placeholder: #7f889a;
-  --input-check: #22d3ee;
-
-  /* ===== Estados ===== */
-  --success: #22c55e;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --info: #60a5fa;
-  --disabled: #3a4150;
 
   /* ===== Prioridades (tags) ===== */
   --prio-low: #4caf50;
   --prio-medium: #ffc107;
   --prio-high: #f44336;
-  --tag-fg: #0f1117;
-  --tag-bg: rgba(255, 255, 255, 0.08);
-  --tag-border: rgba(255, 255, 255, 0.12);
 
   /* ===== Cores das listas (sidebar) ===== */
   --cat-personal: #0ea5a8;
@@ -49,18 +28,8 @@
   --cat-shopping: #a855f7;
   --cat-other: #22c55e;
 
-  /* ===== Metadados (datas à direita) ===== */
-  --meta: #a2a9b8;
-
-  /* ===== Shadows ===== */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  /* ===== Shadows (usadas em botões) ===== */
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 12px 28px rgba(0, 0, 0, 0.55);
-  --shadow-accent: 0 0 10px rgba(14, 165, 168, 0.5);
-  --shadow-success: 0 0 10px rgba(34, 197, 94, 0.45);
-  --shadow-warning: 0 0 10px rgba(245, 158, 11, 0.45);
-  --shadow-danger: 0 0 10px rgba(239, 68, 68, 0.45);
 
   /* ===== Raios / Espaçamentos ===== */
   --pad-xs: 4px;
@@ -71,30 +40,14 @@
   /* ===== Botões ===== */
   --btn-bg: var(--accent);
   --btn-bg-hover: var(--accent-hover);
-  --btn-fg: #e6f9fa;
   --btn-border: transparent;
   --btn-shadow: var(--shadow-md);
 
-  /* ===== Cartões / Painéis ===== */
-  --card-bg: var(--surface);
-  --card-border: var(--border);
-  --card-shadow: var(--shadow-lg);
-
   /* ===== Hovers / Actives ===== */
-  --hover: rgba(255, 255, 255, 0.04);
   --active: rgba(255, 255, 255, 0.08);
 
-  /* ===== Gradientes ===== */
-  --grad-accent: linear-gradient(90deg, #0ea5a8 0%, #22d3ee 100%);
-
   /* ===== Tamanhos ===== */
-  --font-xs: 0.75rem; /* 12px */
-  --font-sm: 0.875rem; /* 14px */
   --font-md: 1rem; /* 16px */
-  --font-lg: 1.125rem; /* 18px */
-  --font-xl: 1.25rem; /* 20px */
-  --font-xxl: 1.5rem; /* 24px */
-
   --container-max: 1200px;
   --sidebar-width: 280px;
 
