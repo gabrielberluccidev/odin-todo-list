@@ -19,3 +19,27 @@ export function clearForm() {
   document.querySelector("#date").value = "";
   document.querySelector("#priority").value = "";
 }
+
+export function getPriorityOrder() {
+  const priorityOrder = document.querySelector("#order").value.toLowerCase();
+
+  // console.log("order name from taskForm.js: ", priorityOrder);
+  if (priorityOrder === "none") return "name";
+  if (priorityOrder === "order-name") return "name";
+  if (priorityOrder === "order-date") return "date";
+  if (priorityOrder === "order-priority") return "priority";
+}
+
+export function getCardInfo(card) {
+  const title = card.querySelector(
+    ".todo-list-main-task-card-title p"
+  )?.textContent;
+  const date = card.querySelector(
+    ".todo-list-main-task-card-date p"
+  )?.textContent;
+  const priority = card.querySelector(
+    ".todo-list-main-task-card span"
+  )?.textContent;
+
+  return { title, date, priority };
+}
