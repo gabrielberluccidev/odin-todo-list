@@ -65,7 +65,7 @@ export function createTodoCard(task) {
   /* add the textContent to the elements */
   todoTitle.textContent = todoTitleInput;
   todoDate.textContent = todoDateInput;
-  console.log(todoDate);
+  // console.log(todoDate);
 
   todoPriority.textContent = todoPriorityInput;
   deleteTask.textContent = "delete";
