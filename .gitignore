@@ -24,6 +24,4 @@ yarn-error.log*
 ui/
 
 # Ignore
-ignore/
-
-src/tasks/tmp.js
+src/old
