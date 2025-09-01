@@ -24,10 +24,10 @@ export function getPriorityOrder() {
   const priorityOrder = document.querySelector("#order").value.toLowerCase();
 
   // console.log("order name from taskForm.js: ", priorityOrder);
+
   if (priorityOrder === "none") return "name";
-  if (priorityOrder === "order-name") return "name";
-  if (priorityOrder === "order-date") return "date";
-  if (priorityOrder === "order-priority") return "priority";
+
+  return priorityOrder;
 }
 
 export function getCardInfo(card) {
