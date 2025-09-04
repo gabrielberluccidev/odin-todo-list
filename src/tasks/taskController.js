@@ -20,7 +20,7 @@ export function initTaskController() {
       formData.todoDateInput,
       formData.todoPriorityInput
     );
-    const card = createTodoCard(task);
+    const card = createTodoCard(task, undefined, undefined, undefined);
 
     container.appendChild(card);
 
