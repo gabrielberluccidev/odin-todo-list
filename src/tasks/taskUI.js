@@ -1,7 +1,6 @@
 import { getTaskFormInput } from "./taskForm.js";
-import { checkExpiredDate } from "./checkExpiredDate.js";
 
-export function createTodoCard(task) {
+export function createTodoCard(task, title, date, priority) {
   /* create the divs based on HMTL project which is based on the classes as bellow:
 
   todo-list-main-task: immutable, insn't handled by the DOM;
@@ -49,9 +48,24 @@ export function createTodoCard(task) {
   checkbox.classList.add("checkbox");
   deleteTask.classList.add("material-symbols-outlined");
   deleteTask.classList.add("delete");
+  
 
-  const { todoTitleInput, todoDateInput, todoPriorityInput } =
-    getTaskFormInput();
+
+  let todoTitleInput, todoDateInput, todoPriorityInput;
+
+  if (title !== undefined && date !== undefined && priority !== undefined) {
+    todoTitleInput = title,
+    todoDateInput = date,
+    todoPriorityInput = priority
+  } else {
+    const formInput = getTaskFormInput();
+
+    todoTitleInput = formInput.todoTitleInput
+    todoDateInput = formInput.todoDateInput
+    todoPriorityInput = formInput.todoPriorityInput
+  }
+
+  
   todoPriority.classList.add(`${todoPriorityInput}`);
 
   /* add datasets to the todoCard, may not be used */
