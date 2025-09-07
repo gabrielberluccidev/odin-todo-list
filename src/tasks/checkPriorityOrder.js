@@ -108,11 +108,9 @@ export function checkPriorityOrder() {
 
   mainContainer.replaceChildren();
 
-
   cardInfo.forEach((info) => {
-    
-    mainContainer.append(createTodoCard(undefined, info?.title, info?.date, info?.priority))
-  })
-
-
+    mainContainer.append(
+      createTodoCard(undefined, info?.title, info?.date, info?.priority)
+    );
+  });
 }
