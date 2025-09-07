@@ -41,5 +41,7 @@ export function getCardInfo(card) {
     ".todo-list-main-task-card span"
   )?.textContent;
 
-  return { title, date, priority };
+  const id = card.dataset.id;
+
+  return { title, date, priority, id };
 }
