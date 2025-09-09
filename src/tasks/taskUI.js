@@ -48,24 +48,23 @@ export function createTodoCard(task, title, date, priority) {
   checkbox.classList.add("checkbox");
   deleteTask.classList.add("material-symbols-outlined");
   deleteTask.classList.add("delete");
-  
-
 
   let todoTitleInput, todoDateInput, todoPriorityInput;
 
   if (title !== undefined && date !== undefined && priority !== undefined) {
-    todoTitleInput = title,
-    todoDateInput = date,
-    todoPriorityInput = priority
+    (todoTitleInput = title),
+      (todoDateInput = date),
+      (todoPriorityInput = priority);
   } else {
     const formInput = getTaskFormInput();
 
-    todoTitleInput = formInput.todoTitleInput
-    todoDateInput = formInput.todoDateInput
-    todoPriorityInput = formInput.todoPriorityInput
+    if (!formInput) return null;
+
+    todoTitleInput = formInput.todoTitleInput;
+    todoDateInput = formInput.todoDateInput;
+    todoPriorityInput = formInput.todoPriorityInput;
   }
 
-  
   todoPriority.classList.add(`${todoPriorityInput}`);
 
   /* add datasets to the todoCard, may not be used */
@@ -118,20 +117,26 @@ export function openEditModal(card) {
   modal.style.display = "block";
 
   const onSave = () => {
-    const newTitle = titleInput.value.trim();
-    const newDate = dateInput.value.trim();
-    const newPriority = priorityInput.value.toUpperCase();
+    const title = titleInput.value.trim();
+    const date = dateInput.value.trim();
+    const priority = priorityInput.value.toUpperCase();
 
-    card.dataset.title = newTitle;
-    card.dataset.date = newDate;
-    card.dataset.priority = newPriority;
+    card.dataset.title = title;
+    card.dataset.date = date;
+    card.dataset.priority = priority;
 
-    card.querySelector(".todo-list-main-task-card-title p").textContent =
-      newTitle;
-    card.querySelector(".todo-list-main-task-card-date p").textContent =
-      newDate;
-    card.querySelector("span").textContent = newPriority;
-    card.querySelector("span").className = newPriority;
+    localStorage.removeItem(card.dataset.id);
+
+    const id = Date.now();
+    const info = { title, date, priority, id };
+
+    localStorage.setItem(id, JSON.stringify(info));
+    card.dataset.id = id;
+
+    card.querySelector(".todo-list-main-task-card-title p").textContent = title;
+    card.querySelector(".todo-list-main-task-card-date p").textContent = date;
+    card.querySelector("span").textContent = priority;
+    card.querySelector("span").className = priority;
 
     modal.style.display = "none";
 
