@@ -40,7 +40,13 @@ export function initTaskController() {
       openEditModal(card);
     }
     if (e.target.classList.contains("delete")) {
-      e.target.closest(".todo-list-main-task-card").remove();
+      const card = e.target.closest(".todo-list-main-task-card");
+
+      if (card) {
+        const key = card.dataset.id;
+        localStorage.removeItem(key);
+        card.remove();
+      }
     }
   });
 
