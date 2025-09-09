@@ -1,4 +1,3 @@
-import { checkPriorityOrder } from "./checkPriorityOrder";
 import { getCardInfo } from "./taskForm";
 import { createTodoCard } from "./taskUI";
 
@@ -27,7 +26,7 @@ export function getTasks() {
 
   mainContainer.innerHTML = "";
 
-  // 2. Percorre todos os itens salvos no localStorage.
+  // go throught all the keys in local storage
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
 
